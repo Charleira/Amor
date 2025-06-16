@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Para o Amor da Minha Vida ❤️</title>
-  <link rel="icon" href="https://www.flaticon.com/free-icon/love_14035644?term=heart+red&page=1&position=5&origin=search&related_id=14035644" type="image/png">
+  <!-- Link de favicon deve apontar direto para o .png ou .ico -->
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/833/833472.png" type="image/png">
   <style>
     body {
       background-color: #fff0f5;
@@ -46,27 +47,47 @@
 </head>
 <body>
 
+  <!-- Botão para tocar a música -->
+  <button class="btn" onclick="playMusic()">Clique para ouvir nossa música antes de começar a ler 🎶</button>
+
   <h1>💖 Para Ana Cecilia 💖</h1>
-  <p>Quero que você saiba o quanto eu to sentindo por Você.</p>
-  <p>Tudo começou naquela noite de cachorro quente na casa do Nicolas (fofura), quando perguntei sobre voce para o Bruno, e ali ja comecei a te chamar de Loira odonto, mal eu sabia que estaria gostando dessa loira que faz Biomedicina❤️ </p>
-  <p>No começo não queria falar nada, por conta que o Bruno disse que voce estava tendo um caso com um menino da sua universidade, entao deixei de lado ❤️</p>
-  <p>Depois nos aproximamos no Bentão e no McDonalds, e eu ja com vontade de ter te mandado mensagem antes... Resolvi criar coragem e tentar puxar assunto com voce ❤️</p>
-  <p>E depois das conversas que tivemos, aquele jantar no McDonalds, foram divisores de agua para mim ❤️</p>
-  <p>Não sou tao bom com as palavras, mas meu sentimento fala e grita mais forte so de ver notificação sua... ❤️️</p>
+  <p>Quero que você saiba o quanto eu to sentindo por você.</p>
+  <p>Tudo começou naquela noite de cachorro quente na casa do Nicolas (fofura), quando perguntei sobre você para o Bruno, e ali já comecei a te chamar de Loira odonto. Mal eu sabia que estaria gostando dessa loira que faz Biomedicina ❤️</p>
+  <p>No começo não queria falar nada, porque o Bruno disse que você estava tendo um caso com um menino da sua universidade, então deixei de lado ❤️</p>
+  <p>Depois nos aproximamos no Bentão e no McDonalds, e eu já com vontade de ter te mandado mensagem antes... Resolvi criar coragem e tentar puxar assunto com você ❤️</p>
+  <p>E depois das conversas que tivemos, aquele jantar no McDonalds, foram divisores de água para mim ❤️</p>
+  <p>Não sou tão bom com as palavras, mas meu sentimento fala e grita mais forte só de ver notificação sua... ❤️️</p>
+  
   <div class="heart">❤️</div>
   
-  <p>Queria saber se você Ana Cecilia ( minha UNIPER ) , Aceita arriscar e construir um relacionamento ao meu lado? </p>
+  <p>Queria saber se você, Ana Cecilia (minha UNIPER), aceita arriscar e construir um relacionamento ao meu lado? </p>
   <button class="btn" onclick="redirecionar()">Sim!</button>
 
-  <!-- Música de fundo -->
-  <audio autoplay loop>
-    <source src="musica.mp3" type="audio/mpeg">
+  <!-- Player de áudio escondido -->
+  <audio id="myAudio" loop>
+    <source src="myAudio.mp3" type="audio/mpeg">
     Seu navegador não suporta áudio HTML5.
   </audio>
+
+  <!-- Scripts só no final do body -->
   <script>
+    function playMusic() {
+    const audio = document.getElementById("myAudio");
+    if (audio) {
+      audio.volume = 0.01; // Volume em 25%
+      audio.play().catch(function(error) {
+        console.error("Erro ao tentar tocar o áudio:", error);
+        alert("Não foi possível iniciar a música automaticamente. Clique novamente para tentar.");
+      });
+    } else {
+      console.error("Elemento de áudio não encontrado.");
+    }
+  }
+
     function redirecionar() {
       window.location.href = "https://maps.app.goo.gl/WKCm7vhbWrtc5VJK7";
     }
   </script>
+
 </body>
 </html>
